@@ -1,7 +1,7 @@
 {
   "name": "webpack-isomorphic-compiler-notifier",
   "description": "Notify webpack compilation status to your operating system when using webpack-isomorphic-compiler",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "keywords": [
     "webpack",
     "isomorphic",
