@@ -55,5 +55,8 @@
     "standard-version": "^4.2.0",
     "webpack": "^3.8.1",
     "webpack-isomorphic-compiler": "^1.1.2"
+  },
+  "dependencies": {
+    "node-notifier": "^5.1.2"
   }
 }
