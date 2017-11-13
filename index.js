@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const os = require('os');
 const notifier = require('node-notifier');
 const readPkgUp = require('read-pkg-up');
 const stripAnsi = require('strip-ansi');
@@ -17,11 +18,20 @@ function getDefaultTitle() {
     return defaultTitle;
 }
 
-function createNotifier(options) {
-    return (message) => notifier.notify(Object.assign({ message }, options));
+function createNotifier({ title, icon, sound }) {
+    // On osx, omit the icon because it will be cut off in the notification center
+    const omitIcon = os.platform() === 'darwin';
+
+    return (message) => notifier.notify({
+        title,
+        message,
+        contentImage: icon,
+        icon: omitIcon ? undefined : icon,
+        sound,
+    });
 }
 
-function isomorphicNotifier(isomorphicCompiler, options) {
+function webpackIsomorphicCompilerNotifier(isomorphicCompiler, options) {
     options = Object.assign({
         title: undefined,
         icon: path.join(__dirname, 'webpack-logo.png'),
@@ -52,4 +62,4 @@ function isomorphicNotifier(isomorphicCompiler, options) {
     return isomorphicCompiler;
 }
 
-module.exports = isomorphicNotifier;
+module.exports = webpackIsomorphicCompilerNotifier;

@@ -10,7 +10,7 @@ jest.mock('node-notifier', () => ({
 }));
 
 const title = 'webpack-isomorphic-compiler-notifier';
-const icon = path.resolve(__dirname, '../webpack-logo.png');
+const contentImage = path.resolve(__dirname, '../webpack-logo.png');
 const sound = false;
 
 beforeEach(jest.clearAllMocks);
@@ -23,10 +23,10 @@ it('should report a build success', () => {
     isomorphicCompiler.emit('end');
 
     expect(notifier.notify).toHaveBeenCalledTimes(1);
-    expect(notifier.notify).toHaveBeenCalledWith({
+    expect(notifier.notify.mock.calls[0][0]).toMatchObject({
         title,
-        icon,
-        sound,
+        contentImage,
+        sound: false,
         message: 'Build successful',
     });
 });
@@ -41,7 +41,7 @@ it('should report a build error', () => {
     expect(notifier.notify).toHaveBeenCalledTimes(1);
     expect(notifier.notify.mock.calls[0][0]).toMatchObject({
         title,
-        icon,
+        contentImage,
         sound,
     });
     expect(notifier.notify.mock.calls[0][0].message).toMatch('foo');
@@ -85,9 +85,9 @@ it('should allow a custom title, icon and sound options', () => {
     isomorphicCompiler.emit('end');
 
     expect(notifier.notify).toHaveBeenCalledTimes(1);
-    expect(notifier.notify).toHaveBeenCalledWith({
+    expect(notifier.notify.mock.calls[0][0]).toMatchObject({
         title: 'foo',
-        icon: 'bar',
+        contentImage: 'bar',
         sound: true,
         message: 'Build successful',
     });

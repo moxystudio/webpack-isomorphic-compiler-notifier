@@ -35,7 +35,7 @@ const compiler = webpackIsomorphicCompiler(/* client config */, /* server config
 webpackIsomorphicCompilerNotifier(compiler);
 ```
 
-For convenience, the function returns the isomorphic compiler passed as the first argument.
+For convenience, the function returns the isomorphic compiler passed as the first argument.   
 The second argument accepts an options object:
 
 - `title`: The title for the notification (defaults to the package.json `name` property)
