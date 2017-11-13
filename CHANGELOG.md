@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/moxystudio/webpack-isomorphic-notifier/compare/v1.0.0...v1.0.1) (2017-11-13)
+
+
+### Bug Fixes
+
+* fix some minor issues with the icon on osx ([252f178](https://github.com/moxystudio/webpack-isomorphic-notifier/commit/252f178))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/moxystudio/webpack-isomorphic-notifier/compare/v0.1.0...v1.0.0) (2017-11-12)
 
