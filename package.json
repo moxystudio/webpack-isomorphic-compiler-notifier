@@ -17,6 +17,10 @@
     "url": "git@github.com:moxystudio/webpack-isomorphic-notifier.git"
   },
   "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "webpack-logo.png"
+  ],
   "scripts": {
     "lint": "eslint .",
     "test": "jest --env node --coverage",
