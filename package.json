@@ -11,10 +11,10 @@
     "build"
   ],
   "author": "André Cruz <andre@moxy.studio>",
-  "homepage": "https://github.com/moxystudio/webpack-isomorphic-notifier",
+  "homepage": "https://github.com/moxystudio/webpack-isomorphic-compiler-notifier",
   "repository": {
     "type": "git",
-    "url": "git@github.com:moxystudio/webpack-isomorphic-notifier.git"
+    "url": "git@github.com:moxystudio/webpack-isomorphic-compiler-notifier.git"
   },
   "license": "MIT",
   "main": "index.js",
